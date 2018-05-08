@@ -1,0 +1,41 @@
+{
+"button":[
+    {
+    "name": "产品",
+    "sub_button":[
+        {
+            "type":"view",
+            "name":"常见问题",
+            "url":"https://abpao.com/m"
+        },
+        {
+            "type":"view",
+            "name":"应用下载",
+            "url":"http://android.myapp.com/myapp/detail.htm?apkName=com.gcs.mcj.insole&ADTAG=mobile"
+        }]
+    },
+    {    
+        "type":"click",
+        "name":"定位设备",
+        "key":"V1001_TODAY_MUSIC"
+    },
+    {
+    "name": "服务",
+    "sub_button":[
+        {
+            "type":"view",
+            "name":"售后政策",
+            "url":"https://abpao.com/m"
+        },
+        {
+            "type":"view",
+            "name":"申请维修",
+            "url":"https://abpao.com/m"
+        },
+        {
+            "type":"view",
+            "name":"联系方式",
+            "url":"https://abpao.com/m"
+        }]
+    }]
+}

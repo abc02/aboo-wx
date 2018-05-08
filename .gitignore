@@ -1,3 +1,6 @@
+# 敏感信息
+server/config/keys.json
+
 # Logs
 logs
 *.log
