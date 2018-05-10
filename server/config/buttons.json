@@ -15,9 +15,11 @@
         }]
     },
     {    
-        "type":"click",
+        "type":"miniprogram",
         "name":"定位设备",
-        "key":"V1001_TODAY_MUSIC"
+        "url":"http://mp.weixin.qq.com",
+        "appid": "wxcd17023464160ec5",
+        "pagepath": "pages/index/Index"
     },
     {
     "name": "服务",
