@@ -5,13 +5,18 @@
     "sub_button":[
         {
             "type":"view",
-            "name":"常见问题",
-            "url":"https://abpao.com/m"
+            "name":"使用教程",
+            "url":"http://230965b9.nat123.cc/"
         },
         {
             "type":"view",
             "name":"应用下载",
             "url":"http://android.myapp.com/myapp/detail.htm?apkName=com.gcs.mcj.insole&ADTAG=mobile"
+        },
+        {
+            "type":"view",
+            "name":"常见问题",
+            "url":"https://abpao.com/m"
         }]
     },
     {    
