@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Drawer, NavBar, Icon } from 'antd-mobile';
+import { Drawer, NavBar, Icon, Card, WhiteSpace } from 'antd-mobile';
 import { Map } from 'react-amap';
 // import Geolocation from 'react-amap-plugin-geolocation';
 import Sidebar from './Sidebar'
@@ -13,6 +13,8 @@ import getLastPosition from '../assets/getLastPosition.png'
 import icon_Mode from '../assets/icon_Mode@2x.png'
 import icon_Child from '../assets/icon_Child.png'
 import icon_Wifi from '../assets/icon_Wifi.png'
+import icon_Battery from '../assets/icon_Battery.png'
+import icon_gif_success from '../assets/icon_gif_success.png'
 // 定位插件
 // const pluginProps = {
 //   enableHighAccuracy:true,
@@ -88,6 +90,7 @@ const LocationCtrl = (props) => {
   return (<div style={style}>
     <img src={icon_mainlocat} alt="icon_mainlocat" style={buttonStyle} />
   </div>);
+  
 }
 const GetLastPosition = (props) => {
   const map = props.__map__;
@@ -174,6 +177,7 @@ const ZoomCtrl = (props) => {
   </div>);
 };
 const BottomCtrl = (props) => {
+  // console.log(props)
   const map = props.__map__;
   if (!map) {
     console.log('组件必须作为 Map 的子组件使用');
@@ -181,7 +185,7 @@ const BottomCtrl = (props) => {
   }
   const style = {
     position: 'absolute',
-    height: '20vh',
+    // height: '20vh',
     left: '10px',
     right: '10px',
     bottom: '10px',
@@ -191,12 +195,15 @@ const BottomCtrl = (props) => {
     // flexDirection: 'column',
     // transform: 'translateY(-50%)',
     boxShadow: '0 0 3px rgba(0, 0, 0, .6)',
-    zIndex: '9999'
+    zIndex: '999'
   }
   const container = {
     margin: '6px',
     paddingBottom: '6px',
     borderBottom: '1px solid rgba(0,0,0, .15)'
+  }
+  const titleStyle = {
+    marginBottom: '8px'
   }
   const ModeStyle = {
     position: 'absolute',
@@ -204,31 +211,126 @@ const BottomCtrl = (props) => {
     width: '20px',
     height: '20px'
   }
+  const textStyle = {
+    fontSize: '12px',
+    color: 'gray'
+  }
   const addressStyle = {
     position: 'relative',
     marginLeft: '30px',
     marginBottom: '6px',
     height: '20px',
     lineHeight: '20px',
-    fontSize: '12px',
-    color: 'gray'
+    ...textStyle
   }
   const colorStyle = {
+    ...textStyle,
     color: '#399af7'
   }
-  return (<div style={style}>
+  const fixingsStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: '6px'
+  }
+  const fixingStyle = {
+    width: '40px',
+    height: '40px',
+    marginLeft: '12px',
+    borderRadius: '50%',
+    boxShadow: '0 0 3px rgba(0, 0, 0, 1)',
+  }
+  // const addFixingStyle = {
+  //   ...fixingStyle
+  // }
+  const fxingInfoStyle = {
+    ...fixingsStyle,
+    ...colorStyle,
+    height: '20px',
+    lineHeight: '20px'
+  }
+  const infoTitleStsyle = {
+    fontWeight: 'bold'
+  }
+  const batteryStyle = {
+    width: '41px',
+    height: '16px'
+  }
+  const mainLocatButtonStyle = {
+    position: 'absolute',
+    top: '-52px',
+    width: '40px',
+    height: '40px',
+    background: '#fff',
+    borderRadius: '50%', 
+    boxShadow: '0 0 3px rgba(0, 0, 0, .6)',
+  }
+  const getLastPositionStyle = {
+    position: 'absolute',
+    top: '-86px',
+    right: '0',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+    // boxShadow: '0 0 3px rgba(0, 0, 0, .6)'
+  }
+  const getLastPositionButtonStyle = {
+    width: '60px',
+    height: '60px'
+  }
+  const textBackgroundStyle = {
+    padding: '5px',
+    fontSize: '12px',
+    borderRadius: '5px',
+    background: 'rgba(255, 255, 255, .5)',
+  }
+  return (<div style={style} onClick={props.onDock}>
+    <img src={icon_mainlocat} alt="icon_mainlocat" style={mainLocatButtonStyle} />
+    <div style={getLastPositionStyle}>
+      <img src={getLastPosition} alt="getLastPosition" style={getLastPositionButtonStyle} />
+      <div style={textBackgroundStyle}>更新位置</div>
+    </div>
     <div style={container}>
-      <h2>洪渡桥村东59米</h2>
-      <p style={addressStyle}><img src={icon_Wifi} alt="icon_mode" style={ModeStyle} />&nbsp;<span>精准度30米</span> &nbsp;<span style={colorStyle}>浙江温州市乐清市沙洪撸</span></p>
-      <p>15:31更新</p>
+      <h2 style={titleStyle}>温州鞋都网络科技有限公司北门50米</h2>
+      <p style={addressStyle}><img src={icon_Wifi} alt="icon_mode" style={ModeStyle} />&nbsp;<span>精准度30米</span> &nbsp;<span style={colorStyle}>浙江温州市鹿城区昆仑路72号A栋201</span></p>
+      <p style={textStyle}>15:31更新</p>
+    </div>
+    <div style={fixingsStyle}>
+      <img style={fixingStyle} src={icon_gif_success} alt="tx" />
+      <img style={fixingStyle} src={zoom_in} alt="addfixing" />
+    </div>
+    <div style={fxingInfoStyle}>
+      <span style={infoTitleStsyle}>设备10091</span> &nbsp;&nbsp;<span>87%</span>&nbsp;&nbsp;<img src={icon_Battery} style={batteryStyle} alt="icon_battery" />
     </div>
   </div>);
 }
-const BottomCtrl2 = (props) => {
-  return (<div>
-  123
-  </div>);
-}
+const BottomCtrlbar = (<div>
+   {/* <WhiteSpace size="lg" /> */}
+    <Card style={{zIndex: '9999'}}>
+      <Card.Header
+        title="This is title"
+        thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
+        extra={<span>this is extra</span>}
+      />
+      <Card.Body>
+        <div>This is content of `Card`</div>
+      </Card.Body>
+      <Card.Footer content="footer content" extra={<div>extra footer content</div>} />
+    </Card>
+</div>);
+// const sidebar = (<List >
+//   {[ '阿布跑跑', '我的鞋垫', '宝宝论坛', '阿布公益', '我要分享', '系统设置'].map((i, index) => {
+//   if (index === 0) {
+//       return (<Item key={index}
+//       style={{height: '30vh'}}
+//       >  <img style={{height: '50px', width: '50px', marginRight: '20px', borderRadius: '50%'}} src="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png" alt="头像"/> 
+//   <span> {i}</span></Item>);
+//   }
+//   return (<Item key={index}
+//       thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
+//       arrow="horizontal"
+//   >{i}</Item>);
+//   })}
+// </List>);
 class App extends Component {
   state = {
     leftOpen: false,
@@ -255,20 +357,14 @@ class App extends Component {
         open={this.state.leftOpen}
         onOpenChange={() => this.onDock('leftOpen')}
       >
-         {/* <Map amapkey="a1a4b0c0db52f71366ae4732e531748a" style={{minHeight: '93vh'}}> 
-          <Geolocation {...pluginProps} />
-          <ZoomCtrl />
-          <LayerCtrl />
-          <LeftTopCtrl />
-          <GetLastPosition />
-        </Map> */}
+         Click upper-left corner
       </Drawer>
       <Drawer
         className="bottom-drawer"
         style={{ minHeight: '93vh', marginTop: '7vh' }}
         enableDragHandle
         position='bottom'
-        sidebar={Sidebar}
+        sidebar={BottomCtrlbar}
         open={this.state.bottomOpen}
         onOpenChange={() => this.onDock('bottomOpen')}
       >
@@ -276,11 +372,9 @@ class App extends Component {
           <LeftTopCtrl />
           <ZoomCtrl />
           <LayerCtrl />
-          <GetLastPosition />
-          <BottomCtrl />
-          <LocationCtrl />
+          {/* <BottomCtrl onDock={() => this.onDock('bottomOpen')} /> */}
         </Map>
-      </Drawer>
+      </Drawer> 
      
        {/* <NavBar icon={<Icon type="ellipsis" />} onLeftClick={() => this.onDock('open')}>
         Docked in document

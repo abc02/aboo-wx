@@ -27,7 +27,7 @@
   to { transform: rotate(360deg); }
 }
 
-.left-drawer {
+.left-drawer{
   position: relative;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -42,6 +42,9 @@
   padding: 0;
 }
 
-.am-drawer-sidebar {
+.left-drawer .am-drawer-sidebar {
   z-index: 99999;
+}
+.amap-logo, .amap-copyright {
+  z-index: 1;
 }
