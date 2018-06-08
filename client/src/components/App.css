@@ -74,3 +74,9 @@
   line-height: 30px;
   width: 100%;
 }
+.am-list-line::after{
+  height: 0 !important;
+}
+.am-list-body::after {
+  height: 0 !important;
+}

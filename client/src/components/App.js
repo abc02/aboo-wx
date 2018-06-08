@@ -7,9 +7,9 @@ import Sidebar from './Sidebar'
 import './App.css';
 import zoom_in from '../assets/zoom_in.png'
 import zoom_out from '../assets/zoom_out.png'
-import icon_mainlocat from '../assets/icon_mainlocat@2x.png'
+// import icon_mainlocat from '../assets/icon_mainlocat@2x.png'
 import icon_satellite from '../assets/icon_satellite@2x.png'
-import getLastPosition from '../assets/getLastPosition.png'
+// import getLastPosition from '../assets/getLastPosition.png'
 import icon_Mode from '../assets/icon_Mode@2x.png'
 import icon_Child from '../assets/icon_Child.png'
 import icon_Wifi from '../assets/icon_Wifi.png'
@@ -179,126 +179,126 @@ const ZoomCtrl = (props) => {
     <img src={zoom_out} alt="zoom_out" style={buttonStyle} onClick={zoomOut} />
   </div>);
 };
-const BottomCtrl = (props) => {
-  // console.log(props)
-  const map = props.__map__;
-  if (!map) {
-    console.log('组件必须作为 Map 的子组件使用');
-    return;
-  }
-  const style = {
-    position: 'absolute',
-    // height: '20vh',
-    left: '10px',
-    right: '10px',
-    bottom: '10px',
-    background: '#fff',
+// const BottomCtrl = (props) => {
+//   // console.log(props)
+//   const map = props.__map__;
+//   if (!map) {
+//     console.log('组件必须作为 Map 的子组件使用');
+//     return;
+//   }
+//   const style = {
+//     position: 'absolute',
+//     // height: '20vh',
+//     left: '10px',
+//     right: '10px',
+//     bottom: '10px',
+//     background: '#fff',
    
-    // display: 'flex',
-    // flexDirection: 'column',
-    // transform: 'translateY(-50%)',
-    boxShadow: '0 0 3px rgba(0, 0, 0, .6)',
-    zIndex: '999'
-  }
-  const container = {
-    margin: '6px',
-    paddingBottom: '6px',
-    borderBottom: '1px solid rgba(0,0,0, .15)'
-  }
-  const titleStyle = {
-    marginBottom: '8px'
-  }
-  const ModeStyle = {
-    position: 'absolute',
-    left: '-25px',
-    width: '20px',
-    height: '20px'
-  }
-  const textStyle = {
-    fontSize: '12px',
-    color: 'gray'
-  }
-  const addressStyle = {
-    position: 'relative',
-    marginLeft: '30px',
-    marginBottom: '6px',
-    height: '20px',
-    lineHeight: '20px',
-    ...textStyle
-  }
-  const colorStyle = {
-    ...textStyle,
-    color: '#399af7'
-  }
-  const fixingsStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    marginBottom: '6px'
-  }
+//     // display: 'flex',
+//     // flexDirection: 'column',
+//     // transform: 'translateY(-50%)',
+//     boxShadow: '0 0 3px rgba(0, 0, 0, .6)',
+//     zIndex: '999'
+//   }
+//   const container = {
+//     margin: '6px',
+//     paddingBottom: '6px',
+//     borderBottom: '1px solid rgba(0,0,0, .15)'
+//   }
+//   const titleStyle = {
+//     marginBottom: '8px'
+//   }
+//   const ModeStyle = {
+//     position: 'absolute',
+//     left: '-25px',
+//     width: '20px',
+//     height: '20px'
+//   }
+//   const textStyle = {
+//     fontSize: '12px',
+//     color: 'gray'
+//   }
+//   const addressStyle = {
+//     position: 'relative',
+//     marginLeft: '30px',
+//     marginBottom: '6px',
+//     height: '20px',
+//     lineHeight: '20px',
+//     ...textStyle
+//   }
+//   const colorStyle = {
+//     ...textStyle,
+//     color: '#399af7'
+//   }
+//   const fixingsStyle = {
+//     display: 'flex',
+//     justifyContent: 'center',
+//     marginBottom: '6px'
+//   }
 
-  // const addFixingStyle = {
-  //   ...fixingStyle
-  // }
-  const fxingInfoStyle = {
-    ...fixingsStyle,
-    ...colorStyle,
-    height: '20px',
-    lineHeight: '20px'
-  }
-  const infoTitleStsyle = {
-    fontWeight: 'bold'
-  }
-  const batteryStyle = {
-    width: '41px',
-    height: '16px'
-  }
-  const mainLocatButtonStyle = {
-    position: 'absolute',
-    top: '-52px',
-    width: '40px',
-    height: '40px',
-    background: '#fff',
-    borderRadius: '50%', 
-    boxShadow: '0 0 3px rgba(0, 0, 0, .6)',
-  }
-  const getLastPositionStyle = {
-    position: 'absolute',
-    top: '-86px',
-    right: '0',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-    // boxShadow: '0 0 3px rgba(0, 0, 0, .6)'
-  }
-  const getLastPositionButtonStyle = {
-    width: '60px',
-    height: '60px'
-  }
-  const textBackgroundStyle = {
-    padding: '5px',
-    fontSize: '12px',
-    borderRadius: '5px',
-    background: 'rgba(255, 255, 255, .5)',
-  }
-  return (<div style={style} onClick={props.onDock}>
-    <img src={icon_mainlocat} alt="icon_mainlocat" style={mainLocatButtonStyle} />
-    <div style={getLastPositionStyle}>
-      <img src={getLastPosition} alt="getLastPosition" style={getLastPositionButtonStyle} />
-      <div style={textBackgroundStyle}>更新位置</div>
-    </div>
-    <div style={container}>
-      <h4 style={titleStyle}>温州鞋都网络科技有限公司北门50米</h4>
-      <p style={addressStyle}><img src={icon_Wifi} alt="icon_mode" style={ModeStyle} />&nbsp;<span>精准度30米</span> &nbsp;<span style={colorStyle}>浙江温州市鹿城区昆仑路72号A栋201</span></p>
-      <p style={textStyle}>15:31更新</p>
-    </div>
-    <div style={fixingsStyle}>
+//   // const addFixingStyle = {
+//   //   ...fixingStyle
+//   // // }
+//   // const fxingInfoStyle = {
+//   //   ...fixingsStyle,
+//   //   ...colorStyle,
+//   //   height: '20px',
+//   //   lineHeight: '20px'
+//   // }
+//   const infoTitleStsyle = {
+//     fontWeight: 'bold'
+//   }
+//   const batteryStyle = {
+//     width: '41px',
+//     height: '16px'
+//   }
+//   const mainLocatButtonStyle = {
+//     position: 'absolute',
+//     top: '-52px',
+//     width: '40px',
+//     height: '40px',
+//     background: '#fff',
+//     borderRadius: '50%', 
+//     boxShadow: '0 0 3px rgba(0, 0, 0, .6)',
+//   }
+//   const getLastPositionStyle = {
+//     position: 'absolute',
+//     top: '-86px',
+//     right: '0',
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center'
+//     // boxShadow: '0 0 3px rgba(0, 0, 0, .6)'
+//   }
+//   const getLastPositionButtonStyle = {
+//     width: '60px',
+//     height: '60px'
+//   }
+//   const textBackgroundStyle = {
+//     padding: '5px',
+//     fontSize: '12px',
+//     borderRadius: '5px',
+//     background: 'rgba(255, 255, 255, .5)',
+//   }
+//   return (<div style={style} onClick={props.onDock}>
+//     <img src={icon_mainlocat} alt="icon_mainlocat" style={mainLocatButtonStyle} />
+//     <div style={getLastPositionStyle}>
+//       <img src={getLastPosition} alt="getLastPosition" style={getLastPositionButtonStyle} />
+//       <div style={textBackgroundStyle}>更新位置</div>
+//     </div>
+//     <div style={container}>
+//       <h4 style={titleStyle}>温州鞋都网络科技有限公司北门50米</h4>
+//       <p style={addressStyle}><img src={icon_Wifi} alt="icon_mode" style={ModeStyle} />&nbsp;<span>精准度30米</span> &nbsp;<span style={colorStyle}>浙江温州市鹿城区昆仑路72号A栋201</span></p>
+//       <p style={textStyle}>15:31更新</p>
+//     </div>
+//     <div style={fixingsStyle}>
      
-    </div>
-    <div style={fxingInfoStyle}>
-      <span style={infoTitleStsyle}>设备10091</span> &nbsp;&nbsp;<span>87%</span>&nbsp;&nbsp;<img src={icon_Battery} style={batteryStyle} alt="icon_battery" />
-    </div>
-  </div>);
-}
+//     </div>
+//     <div style={fxingInfoStyle}>
+//       <span style={infoTitleStsyle}>设备10091</span> &nbsp;&nbsp;<span>87%</span>&nbsp;&nbsp;<img src={icon_Battery} style={batteryStyle} alt="icon_battery" />
+//     </div>
+//   </div>);
+// }
 const titleStyle = {
   marginBottom: '8px'
 }
@@ -333,7 +333,7 @@ const fixingStyle = {
   height: '40px',
   marginRight: '12px',
   borderRadius: '50%',
-  boxShadow: '0 0 3px rgba(0, 0, 0, 1)',
+  boxShadow: '0 0 1px rgba(0, 0, 0, .5)',
 }
 const fixingElement = (<div>
       <h4 style={titleStyle}>温州鞋都网络科技有限公司北门50米</h4>
@@ -364,11 +364,11 @@ const securityElement = (<div>
 const exerciseElement = (<div>
   <span style={boldStyle}>阿布记录</span><span style={textStyle}>&nbsp;|&nbsp;今天</span>
 </div>)
-const fxingInfoStyle = {
-  ...colorStyle,
-  height: '20px',
-  lineHeight: '20px'
-}
+// const fxingInfoStyle = {
+//   ...colorStyle,
+//   height: '20px',
+//   lineHeight: '20px'
+// }
 const infoTitleStsyle = {
   fontWeight: 'bold'
 }
@@ -377,8 +377,8 @@ const batteryStyle = {
   height: '12px'
 }
 const  BottomCtrl2 = (props) => {
-  // console.log(props)
   const map = props.__map__;
+  let Y, startY, moveEndY
   if (!map) {
     console.log('组件必须作为 Map 的子组件使用');
     return;
@@ -390,83 +390,60 @@ const  BottomCtrl2 = (props) => {
     right: '0',
     bottom: '0',
     // background: '#fff',
-   
     // display: 'flex',
     // flexDirection: 'column',
     // transform: 'translateY(-50%)',
     // boxShadow: '0 0 3px rgba(0, 0, 0, .6)',
     // zIndex: '999'
   }
-  // const mainLocatButtonStyle = {
-  //   position: 'absolute',
-  //   top: '-52px',
-  //   width: '40px',
-  //   height: '40px',
-  //   background: '#fff',
-  //   borderRadius: '50%', 
-  //   boxShadow: '0 0 3px rgba(0, 0, 0, .6)',
-  // }
-  // const getLastPositionStyle = {
-  //   position: 'absolute',
-  //   top: '-86px',
-  //   right: '0',
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   alignItems: 'center'
-  //   // boxShadow: '0 0 3px rgba(0, 0, 0, .6)'
-  // }
-  // const getLastPositionButtonStyle = {
-  //   width: '60px',
-  //   height: '60px'
-  // }
-  // const textBackgroundStyle = {
-  //   padding: '5px',
-  //   fontSize: '12px',
-  //   borderRadius: '5px',
-  //   background: 'rgba(255, 255, 255, .5)',
-  // }
-  return (<div style={style} onClick={props.onDock}>
-    <WingBlank size="lg">
-     <WhiteSpace size="lg" />
-     <Card>
-       <Card.Header
-         title={fixingElement}
-         // thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
-         // extra={<span>this is extra</span>}
-       />
-       <Card.Body>
-         <Flex justify="center">
-           <img style={fixingStyle} src={icon_gif_success} alt="tx" />
-           <img style={fixingStyle} src={zoom_in} alt="addfixing" />
-         </Flex>
-         <WhiteSpace size="lg" />
+  let handleTouchStart = (e) => {
+    // e.nativeEvent.preventDefault()
+    startY = e.changedTouches[0].pageY
+  }
+  let handleTouchMove = (e) => {
+    // e.nativeEvent.preventDefault()
+    moveEndY = e.changedTouches[0].pageY
+  }
+  let handleTouchEnd = (e) => {
+    Y = moveEndY - startY;
+    console.log(Y, moveEndY, startY)
+    　if ( Y > 0 ) {
+　　　　　　console.log("up -> down");
+　　　　}else{
+          props.onDock()
+　　　　　　console.log("down -> up");
+　　　　}
+  }
+  const modifyStyle = {
+    ...style,
+    display: props.bottomOpen ? 'none' : 'block'
+  }
+  return (<div style={modifyStyle}
+    onTouchStart={handleTouchStart}
+    onTouchMove={handleTouchMove}
+    onTouchEnd={handleTouchEnd}>
+     <WingBlank size="lg">
+    <Card>
+      <Card.Header
+        title={fixingElement}
+        // thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
+        // extra={<span>this is extra</span>}
+      />
+      <Card.Body>
+        <Flex justify="center">
+          <img style={fixingStyle} src={icon_gif_success} alt="tx" />
+          <img style={fixingStyle} src={zoom_in} alt="addfixing" />
+        </Flex>
+        <WhiteSpace size="lg" />
          <Flex justify="center">
           <span style={infoTitleStsyle}>设备10091</span> &nbsp;&nbsp;<span style={colorStyle}>87%</span>&nbsp;&nbsp;<img src={icon_Battery} style={batteryStyle} alt="icon_battery" />
          </Flex>
-       </Card.Body>
-       {/* <Card.Footer content="footer content" extra={<div>extra footer content</div>} /> */}
-     </Card>
-     <WhiteSpace size="lg" />
-   </WingBlank>
+      </Card.Body>
+      {/* <Card.Footer content="footer content" extra={<div>extra footer content</div>} /> */}
+    </Card>
+    <WhiteSpace size="lg" />
+  </WingBlank>
  </div>);
-  // return (<div style={style} onClick={props.onDock}>
-  //   <img src={icon_mainlocat} alt="icon_mainlocat" style={mainLocatButtonStyle} />
-  //   <div style={getLastPositionStyle}>
-  //     <img src={getLastPosition} alt="getLastPosition" style={getLastPositionButtonStyle} />
-  //     <div style={textBackgroundStyle}>更新位置</div>
-  //   </div>
-  //   <div style={container}>
-  //     <h4 style={titleStyle}>温州鞋都网络科技有限公司北门50米</h4>
-  //     <p style={addressStyle}><img src={icon_Wifi} alt="icon_mode" style={ModeStyle} />&nbsp;<span>精准度30米</span> &nbsp;<span style={colorStyle}>浙江温州市鹿城区昆仑路72号A栋201</span></p>
-  //     <p style={textStyle}>15:31更新</p>
-  //   </div>
-  //   <div style={fixingsStyle}>
-     
-  //   </div>
-  //   <div style={fxingInfoStyle}>
-  //     <span style={infoTitleStsyle}>设备10091</span> &nbsp;&nbsp;<span>87%</span>&nbsp;&nbsp;<img src={icon_Battery} style={batteryStyle} alt="icon_battery" />
-  //   </div>
-  // </div>);
 }
 const BottomCtrlbar = (<div style={{height: '100%'}}>
   <WingBlank size="lg">
@@ -615,27 +592,13 @@ const BottomCtrlbar = (<div style={{height: '100%'}}>
       <WhiteSpace size="lg" />
     </WingBlank>
 </div>);
-// const sidebar = (<List >
-//   {[ '阿布跑跑', '我的鞋垫', '宝宝论坛', '阿布公益', '我要分享', '系统设置'].map((i, index) => {
-//   if (index === 0) {
-//       return (<Item key={index}
-//       style={{height: '30vh'}}
-//       >  <img style={{height: '50px', width: '50px', marginRight: '20px', borderRadius: '50%'}} src="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png" alt="头像"/> 
-//   <span> {i}</span></Item>);
-//   }
-//   return (<Item key={index}
-//       thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-//       arrow="horizontal"
-//   >{i}</Item>);
-//   })}
-// </List>);
-
 class App extends Component {
   state = {
     leftOpen: false,
     bottomOpen: false
   }
   onDock = (d) => {
+    // alert(d)
     this.setState({
       [d]: !this.state[d],
     });
@@ -649,23 +612,28 @@ class App extends Component {
         style={{minHeight: '7vh'}}>阿布跑跑</NavBar>
       <Drawer
         className="left-drawer"
-        style={{ minHeight: '93vh'}}
-        enableDragHandle
-        // sidebarStyle={{background: 'red'}}
+        style={{ minHeight: '93vh', zIndex: '9999'}}
+        // style={{ zIndex: '99999'}}
+        // enableDragHandle
+        // sidebarStyle={{ zIndex: '99999'}}
         // contentStyle={{ color: '#A6A6A6', textAlign: 'center', paddingTop: 42 }}
         // overlayStyle={{background: 'red'}}
-        // dragHandleStyle={{background: 'red'}}
+        // dragHandleStyle={{ zIndex: '99999'}}
         sidebar={Sidebar}
         open={this.state.leftOpen}
         onOpenChange={() => this.onDock('leftOpen')}
       >
-      
-         Click upper-left corner
+        <Map amapkey="a1a4b0c0db52f71366ae4732e531748a" style={{minHeight: '93vh'}}> 
+          <LeftTopCtrl />
+          <ZoomCtrl />
+          <LayerCtrl />
+          <BottomCtrl2 onDock={() => this.onDock('bottomOpen')} bottomOpen={this.state.bottomOpen}/>
+        </Map>
       </Drawer>
       <Drawer
         className="bottom-drawer"
-        style={{ minHeight: '93vh', marginTop: '7vh' }}
-        enableDragHandle
+        style={{ minHeight: '93vh', marginTop: '7vh', zIndex: this.state.bottomOpen ? '99999' : '1' }}
+        // enableDragHandle
         sidebarStyle={{boxShadow: '0 0 rgba(0, 0, 0, 0)', height: '100%' }}
         // overlayStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}}
         position='bottom'
@@ -673,12 +641,7 @@ class App extends Component {
         open={this.state.bottomOpen}
         onOpenChange={() => this.onDock('bottomOpen')}
       >
-          <Map amapkey="a1a4b0c0db52f71366ae4732e531748a" style={{minHeight: '93vh'}}> 
-          <LeftTopCtrl />
-          <ZoomCtrl />
-          <LayerCtrl />
-          {/* <BottomCtrl2 onDock={() => this.onDock('bottomOpen')} /> */}
-        </Map>
+        <div />
       </Drawer> 
      
        {/* <NavBar icon={<Icon type="ellipsis" />} onLeftClick={() => this.onDock('open')}>

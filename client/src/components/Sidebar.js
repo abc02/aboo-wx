@@ -1,5 +1,6 @@
 import React from 'react';
-import { List } from 'antd-mobile';
+import { List, WhiteSpace } from 'antd-mobile';
+import tx_background from '../assets/tx_background@2x.png'
 
 const Item = List.Item;
 
@@ -13,15 +14,25 @@ const sidebar = (<List style={{height: '100%'}}>
             marginRight: '20px',
             borderRadius: '50%'
         }
+        const txStyle = {
+            height: '30vh',
+            backgroundImage: `url(${tx_background})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            color: 'white'
+        }
         return (<Item key={index}
-        style={{height: '30vh'}}
+        style={txStyle}
         >  <img style={style} src="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png" alt="头像"/> 
-    <span> {i}</span></Item>);
+    <span style={{color: 'white'}}> {i}</span></Item>);
     }
-    return (<Item key={index}
+    return (<div key={index}>
+        <Item
         thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
         arrow="horizontal"
-    >{i}</Item>);
+    >{i}</Item>
+    <WhiteSpace size="md" />
+    </div>);
     })}
 </List>);
 
