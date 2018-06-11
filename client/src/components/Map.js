@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Map } from 'react-amap';
-class App extends Component {
-  constructor(){
-    super();
-    // this.mapPlugins = ['ToolBar'];
-    // this.mapCenter = {longitude: 120, latitude: 35};
-  }
+import LeftTopCtrl from './LeftTopCtrl'
+import ZoomCtrl from './ZoomCtrl'
+import LayerCtrl from './LayerCtrl'
+import BottomCtrl from './BottomCtrl'
+const AppMap = (props) => (
+  <Map amapkey="a1a4b0c0db52f71366ae4732e531748a" style={{minHeight: '93vh'}}> 
+    <LeftTopCtrl />
+    <ZoomCtrl />
+    <LayerCtrl />
+    <BottomCtrl onDock={() => props.onDock('bottomOpen')} bottomOpen={props.bottomOpen}/>
+  </Map>
+);
 
-  render() {
-    return (<Map 
-      amapkey="a1a4b0c0db52f71366ae4732e531748a"
-      // plugins={this.mapPlugins}
-      // center={this.mapCenter}
-      >
-    </Map>)
-  }
-}
-
-export default App;
+export default AppMap;
