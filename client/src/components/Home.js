@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Drawer, NavBar, Icon } from 'antd-mobile';
 import Sidebar from './Sidebar'
 import Map from './Map'
@@ -26,7 +26,7 @@ class Home extends Component {
            style={{minHeight: '7vh'}}>阿布跑跑</NavBar>
          <Drawer
            className="left-drawer"
-           style={{ minHeight: '93vh', zIndex: '9999', top: '7vh'}}
+           style={{ minHeight: '93vh', zIndex: '99', top: '7vh'}}
            sidebar={Sidebar}
            open={this.state.leftOpen}
            onOpenChange={() => this.onDock('leftOpen')}

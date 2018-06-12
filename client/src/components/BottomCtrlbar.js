@@ -2,7 +2,8 @@ import React from 'react'
 import { Flex, Icon, Card, WingBlank, WhiteSpace } from 'antd-mobile';
 import zoom_in from '../assets/zoom_in.png'
 import icon_Wifi from '../assets/icon_Wifi.png'
-import icon_gif_success from '../assets/icon_gif_success.png'
+import Icon60 from '../assets/Icon-60@3x.png'
+// import icon_gif_success from '../assets/icon_gif_success.png'
 import icon_Battery from '../assets/icon_Battery.png'
 import icon_cardmini from '../assets/icon_cardmini@3x.png'
 import trackimage from '../assets/trackimage.png'
@@ -80,7 +81,7 @@ const BottomCtrlbar = (<div style={{height: '100%'}}>
       />
       <Card.Body>
         <Flex justify="center">
-          <img style={fixingStyle} src={icon_gif_success} alt="tx" />
+          <img style={fixingStyle} src={Icon60} alt="tx" />
           <img style={fixingStyle} src={zoom_in} alt="addfixing" />
         </Flex>
         <WhiteSpace size="lg" />
