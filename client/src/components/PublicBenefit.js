@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { NavBar, Icon, Button, Card, WingBlank, WhiteSpace  } from 'antd-mobile';
+import { NavBar, Icon, Card, WingBlank, WhiteSpace  } from 'antd-mobile';
 import commonweal from '../assets/commonweal@2x.png'
 const data = [
     {
@@ -22,7 +22,7 @@ const data = [
 const Lists = (props) => {
     return (<div>
         {data.map((i, index) => {
-            return (<WingBlank size="md">
+            return (<WingBlank size="md" key={index}>
             <WhiteSpace size="md" />
                 <Card>
                 <Card.Body style={{padding: '0'}}>

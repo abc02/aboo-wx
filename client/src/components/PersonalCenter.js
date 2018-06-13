@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { NavBar, Icon, List, Button, WhiteSpace  } from 'antd-mobile';
+import { NavBar, Icon, List, WhiteSpace  } from 'antd-mobile';
 import Icon60 from '../assets/Icon-60@3x.png'
 
 const Item = List.Item;
 const Img = (<div>
-    <img src={Icon60} style={{width: '50px', height: '50px'}} />
+    <img src={Icon60} style={{width: '50px', height: '50px'}} alt="Icon60" />
     </div>
 )
 const PersonalCenter = () => (

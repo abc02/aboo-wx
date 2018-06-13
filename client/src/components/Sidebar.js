@@ -28,15 +28,16 @@ let showActionSheet = () => {
 );
   }
 
-// fix in codepen
-const sidebar = (<List style={{height: '100%'}}>
-    {[ 
+const data = [ 
     { text: '阿布跑跑', route: 'PersonalCenter', }, 
     { text: '我的鞋垫', route: 'FixingsCenter', icon: apps },
-    { text: '宝宝论坛', route: 'FixingsCenter', icon: icon_community },
+    { text: '宝宝论坛', route: 'BBSCenter', icon: icon_community },
     { text: '阿布公益', route: 'PublicBenefit', icon: icon_like_main },
     { text: '我要分享', route: 'ShareCenter', icon: share },
-    { text: '系统设置', route: 'FixingsCenter', icon: settings }].map((i, index) => {
+    { text: '系统设置', route: 'SetCenter', icon: settings }]
+// fix in codepen
+const sidebar = (<List style={{height: '100%'}}>
+    {data.map((i, index) => {
     if (index === 0) {
         const style = {
             height: '50px',

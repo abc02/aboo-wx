@@ -10,7 +10,7 @@ const ZoomCtrl = (props) => {
     }
     const style = {
       position: 'absolute',
-      top: '50%',
+      top: '44%',
       right: '10px',
       display: 'flex',
       flexDirection: 'column',

@@ -66,8 +66,8 @@ const Lists = (props) => {
 const MessageCenter = () => (
   <div>
       <NavBar
-    icon={<Icon type="left" />}
-    leftContent={<Link to="/" style={{color: 'white'}}>返回</Link>}
+    icon={<Icon type="left" size="lg" />}
+    leftContent={<Link to="/" style={{color: 'white', fontWeight: 'bold'}}>返回</Link>}
     rightContent="编辑"
     style={{minHeight: '7vh'}}>消息中心</NavBar>
     <Lists />
