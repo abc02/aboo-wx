@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import history from './history';
 import { NavBar, Icon, Tabs, Card, List, WhiteSpace  } from 'antd-mobile';
 import Icon60 from '../assets/Icon-60@3x.png'
 
@@ -139,7 +139,7 @@ const Plate = (props) => (<List renderHeader={() => '全部板块(9)'}>
 const BBSCenter = () => (
     <div>
         <NavBar
-    rightContent={<Link to="/"><Icon type="cross" size="lg" color="white"/></Link>}
+    rightContent={<Icon type="cross" size="lg" color="white" onClik={_ => history.goBack()}/>}
     style={{minHeight: '7vh'}}>宝宝论坛</NavBar>
      <Tabs tabs={tabs2}
         initialPage={0}

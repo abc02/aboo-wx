@@ -10,7 +10,7 @@ import settings from '../assets/settings.png'
 import Icon60 from '../assets/Icon-60@3x.png'
 const Item = List.Item;
 
-let showActionSheet = () => {
+const ShareShowActionSheet = (props) => {
     const BUTTONS = ['朋友圈', '微信好友', 'QQ', '取消'];
     ActionSheet.showActionSheetWithOptions({
       options: BUTTONS,
@@ -26,8 +26,7 @@ let showActionSheet = () => {
     //   this.setState({ clicked: BUTTONS[buttonIndex] });
     // }
 );
-  }
-
+}
 const data = [ 
     { text: '阿布跑跑', route: 'PersonalCenter', }, 
     { text: '我的鞋垫', route: 'FixingsCenter', icon: apps },
@@ -62,7 +61,7 @@ const sidebar = (<List style={{height: '100%'}}>
         return (<div key={index}><Item
             thumb={i.icon}
             arrow="horizontal"
-            onClick={showActionSheet}
+            onClick={ShareShowActionSheet}
         >{i.text}</Item>
         <WhiteSpace size="md" />
         </div>)

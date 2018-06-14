@@ -60,7 +60,7 @@ const addfixingStyle = {
 const FixingsCenter = () => (
     <div>
         <NavBar
-    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => history.push('/')}/>}
+    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => history.goBack()}/>}
     style={{minHeight: '7vh'}}>我的鞋垫</NavBar>
      <Lists />
      <Button type="primary" inline style={addfixingStyle}>添加新的鞋垫</Button>

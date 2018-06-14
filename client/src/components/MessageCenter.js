@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import history from './history';
 import { NavBar, Icon, List, WhiteSpace  } from 'antd-mobile';
 // import Administrators from '../assets/Administrators@3x.png'
 // import binding from '../assets/binding@3x.png'
@@ -67,7 +68,8 @@ const MessageCenter = () => (
   <div>
       <NavBar
     icon={<Icon type="left" size="lg" />}
-    leftContent={<Link to="/" style={{color: 'white', fontWeight: 'bold'}}>返回</Link>}
+    leftContent="返回"
+    onLeftClick={_ => history.goBack()}
     rightContent="编辑"
     style={{minHeight: '7vh'}}>消息中心</NavBar>
     <Lists />

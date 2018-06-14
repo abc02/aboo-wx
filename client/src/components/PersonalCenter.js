@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import history from './history';
 import { NavBar, Icon, List, WhiteSpace  } from 'antd-mobile';
 import Icon60 from '../assets/Icon-60@3x.png'
 
@@ -11,7 +11,7 @@ const Img = (<div>
 const PersonalCenter = () => (
     <div>
         <NavBar
-    rightContent={<Link to="/"><Icon type="cross" size="lg" color="white"/></Link>}
+    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => history.goBack()} />}
     style={{minHeight: '7vh'}}>个人资料</NavBar>
      <List>
     <Item

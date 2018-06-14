@@ -83,4 +83,7 @@
 .left-drawer .am-list-body:before {
   height: 0 !important;
 } 
+.FixingQRCode .am-flexbox {
+  background: rgba(0,0,0,0) !important;
+}
  

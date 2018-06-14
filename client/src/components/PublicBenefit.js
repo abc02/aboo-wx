@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import history from './history';
+// import { Link } from 'react-router-dom'
 import { NavBar, Icon, Card, WingBlank, WhiteSpace  } from 'antd-mobile';
 import commonweal from '../assets/commonweal@2x.png'
 const data = [
@@ -45,7 +46,7 @@ const Lists = (props) => {
 const FixingsCenter = () => (
     <div>
         <NavBar
-        rightContent={<Link to="/"><Icon type="cross" size="lg" color="white"/></Link>}
+        rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => history.goBack()}/>}
         style={{minHeight: '7vh'}}>公益栏</NavBar>
         <Lists />
     </div>

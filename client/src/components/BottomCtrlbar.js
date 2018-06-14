@@ -1,4 +1,5 @@
 import React from 'react'
+import history from './history';
 import { Flex, Icon, Card, WingBlank, WhiteSpace } from 'antd-mobile';
 import zoom_in from '../assets/zoom_in.png'
 import icon_Wifi from '../assets/icon_Wifi.png'
@@ -66,9 +67,9 @@ const trackElement = (<div>
 const securityElement = (<div>
 <span style={boldStyle}>安全守护</span>
 </div>)
-const exerciseElement = (<div>
-<span style={boldStyle}>阿布记录</span><span style={textStyle}>&nbsp;|&nbsp;今天</span>
-</div>)
+// const exerciseElement = (<div>
+// <span style={boldStyle}>阿布记录</span><span style={textStyle}>&nbsp;|&nbsp;今天</span>
+// </div>)
 
 const BottomCtrlbar = (<div style={{height: '100%'}}>
   <WingBlank size="lg">
@@ -95,7 +96,7 @@ const BottomCtrlbar = (<div style={{height: '100%'}}>
   </WingBlank>
   <WingBlank size="lg">
     <WhiteSpace size="lg" />
-    <Card>
+    <Card onClick={_ => history.push('/FixingsCenter/FixingDetails/VipCenter')}>
       <Card.Header
         title={vipElement}
         // thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
@@ -150,7 +151,7 @@ const BottomCtrlbar = (<div style={{height: '100%'}}>
   </WingBlank>
   <WingBlank size="lg">
     <WhiteSpace size="lg" />
-    <Card>
+    <Card onClick={_ => history.push('/PublicBenefit')}>
       <Card.Header
         title={securityElement}
         // thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
@@ -165,7 +166,7 @@ const BottomCtrlbar = (<div style={{height: '100%'}}>
     </Card>
     <WhiteSpace size="lg" />
   </WingBlank>
-  <WingBlank size="lg">
+  {/* <WingBlank size="lg">
     <WhiteSpace size="lg" />
     <Card>
       <Card.Header
@@ -192,13 +193,12 @@ const BottomCtrlbar = (<div style={{height: '100%'}}>
           </Flex.Item>
         </Flex>
       </Card.Body>
-      {/* <Card.Footer content="footer content" extra={<div>extra footer content</div>} /> */}
     </Card>
     <WhiteSpace size="lg" />
-  </WingBlank>
+  </WingBlank> */}
     <WingBlank size="lg">
       <WhiteSpace size="lg" />
-      <Card>
+      <Card onClick={_ => history.push('/PublicBenefit')}>
         <Card.Header
           title={commonwealElement}
           // thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
