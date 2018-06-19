@@ -85,7 +85,7 @@ const FixingQRCode = () => (
                 </WingBlank>
                 <WhiteSpace size="lg" />
             </Card>
-            <WhiteSpace size="lg" />
+            <WhiteSpace size="xl" />
             <Grid className="FixingQRCode" data={icons} activeStyle={false}  columnNum={3} hasLine={false} square={false} renderItem={renderItem} />
         </WingBlank>
     </div>

@@ -151,7 +151,7 @@ const BottomCtrlbar = (<div style={{height: '100%'}}>
   </WingBlank>
   <WingBlank size="lg">
     <WhiteSpace size="lg" />
-    <Card onClick={_ => history.push('/PublicBenefit')}>
+    <Card onClick={_ => history.push('/SafetyCenter')}>
       <Card.Header
         title={securityElement}
         // thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"

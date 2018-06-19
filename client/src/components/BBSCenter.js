@@ -139,7 +139,7 @@ const Plate = (props) => (<List renderHeader={() => '全部板块(9)'}>
 const BBSCenter = () => (
     <div>
         <NavBar
-    rightContent={<Icon type="cross" size="lg" color="white" onClik={_ => history.goBack()}/>}
+    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => history.goBack()}/>}
     style={{minHeight: '7vh'}}>宝宝论坛</NavBar>
      <Tabs tabs={tabs2}
         initialPage={0}

@@ -50,20 +50,13 @@ const Lists = (props) => {
   })}
 </List>)
 };
-const addfixingStyle = {
-  position: 'absolute',
-  bottom: '3vh',
-  left: '50%',
-  transform: 'translateX(-50%)',
-  borderRadius: '30px'
-}
 const FixingsCenter = () => (
     <div>
         <NavBar
     rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => history.goBack()}/>}
     style={{minHeight: '7vh'}}>我的鞋垫</NavBar>
      <Lists />
-     <Button type="primary" inline style={addfixingStyle}>添加新的鞋垫</Button>
+     <Button type="primary" inline className="bottom-center-absolute">添加新的鞋垫</Button>
     </div>
 );
   

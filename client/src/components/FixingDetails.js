@@ -52,7 +52,7 @@ const FixingDetails = () => (
         <VipCover status="使用中" />
         <List renderHeader={() => '月卡剩余天时间'}>
             <Item 
-                extra={ <Button type="ghost" inline size="small"  onClick={_ => history.push('/FixingsCenter/FixingDetails/FixingQRCode')}>续费 </Button>}
+                extra={ <Button type="ghost" inline size="small"  onClick={_ => history.push('/FixingsCenter/FixingDetails/VipCenter')}>续费 </Button>}
             >
                 322天 
             </Item>

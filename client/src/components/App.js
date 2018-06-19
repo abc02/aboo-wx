@@ -13,6 +13,7 @@ import ModeCenter from './ModeCenter'
 import BBSCenter from './BBSCenter'
 import PublicBenefit from './PublicBenefit'
 import SetCenter from './SetCenter'
+import SafetyCenter from './SafetyCenter'
 
 class App extends Component {
   render () {
@@ -29,6 +30,7 @@ class App extends Component {
         <Route exact path="/BBSCenter" component={BBSCenter} />
         <Route exact path="/PublicBenefit" component={PublicBenefit} />
         <Route exact path="/SetCenter" component={SetCenter} />
+        <Route exact path="/SafetyCenter" component={SafetyCenter} />
       </Switch>
     </Router> )
   }

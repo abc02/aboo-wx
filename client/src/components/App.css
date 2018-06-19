@@ -86,4 +86,14 @@
 .FixingQRCode .am-flexbox {
   background: rgba(0,0,0,0) !important;
 }
- 
+
+.am-grid .am-flexbox .am-flexbox-item .am-grid-item-content {
+  padding: 0 !important;
+}
+.bottom-center-absolute {
+  position: absolute !important;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 30px;
+}

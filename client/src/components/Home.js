@@ -20,7 +20,7 @@ class Home extends Component {
     render () {
         return (<div style={{height: '100vh'}}>
         <NavBar
-           icon={this.state.bottomOpen ?  <Icon type="down" /> : <img src={my_fill_light} style={{widht: '30px', height: '30px'}} alt="my_fill_light" />}
+           icon={this.state.bottomOpen ?  <Icon type="down" size="lg" /> : <img src={my_fill_light} style={{widht: '30px', height: '30px'}} alt="my_fill_light" />}
            onLeftClick={() => this.onDock(this.state.bottomOpen ? 'bottomOpen' :'leftOpen')}
            rightContent={<Link to="/MessageCenter"><img src={icon_message_white4} style={{widht: '26px', height: '26px'}} alt="icon_message_white4" /></Link>}
            style={{minHeight: '7vh'}}>阿布跑跑</NavBar>
