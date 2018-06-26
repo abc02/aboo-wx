@@ -1,11 +1,9 @@
 import React from 'react'
-import history from './history';
 import { Card, Flex, WingBlank, WhiteSpace  } from 'antd-mobile';
 import iconGifLoad1 from '../assets/icon_gif_load1.png'
-const VipCover = (props) => (
-    <WingBlank size="lg">
+const VipCover = props => (<WingBlank size="lg">
     <WhiteSpace size="lg" />
-    <Card style={{background: '#399af7', padding: '0'}} onClick={_ => history.push('/FixingsCenter/FixingDetails/VipCenter')}>
+    <Card style={{background: '#399af7', padding: '0'}} onClick={_ => props.history.push('/FixingsCenter/FixingDetails/VipCenter')}>
         <Card.Body >
             <Flex>
                 <Flex.Item>
@@ -26,7 +24,6 @@ const VipCover = (props) => (
         </Card.Body>
     </Card>
     <WhiteSpace size="lg" />
-</WingBlank>
-)
+</WingBlank>)
 
 export default VipCover

@@ -4,7 +4,7 @@ import LeftTopCtrl from './LeftTopCtrl'
 import ZoomCtrl from './ZoomCtrl'
 import LayerCtrl from './LayerCtrl'
 import BottomCtrl from './BottomCtrl'
-const AppMap = (props) => (
+const AppMap = props => (
   <Map amapkey="a1a4b0c0db52f71366ae4732e531748a" style={{minHeight: '93vh'}}> 
     <LeftTopCtrl />
     <ZoomCtrl />

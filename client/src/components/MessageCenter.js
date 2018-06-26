@@ -1,6 +1,5 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
-import history from './history';
 import { NavBar, Icon, List, WhiteSpace  } from 'antd-mobile';
 // import Administrators from '../assets/Administrators@3x.png'
 // import binding from '../assets/binding@3x.png'
@@ -64,12 +63,12 @@ const Lists = (props) => {
   })}
 </List>)
 };
-const MessageCenter = () => (
+const MessageCenter = props => (
   <div>
       <NavBar
     icon={<Icon type="left" size="lg" />}
     leftContent="返回"
-    onLeftClick={_ => history.goBack()}
+    onLeftClick={_ => props.history.goBack()}
     rightContent="编辑"
     style={{minHeight: '7vh'}}>消息中心</NavBar>
     <Lists />

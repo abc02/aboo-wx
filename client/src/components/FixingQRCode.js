@@ -1,5 +1,4 @@
 import React from 'react'
-import history from './history';
 import { NavBar, Icon, Card, Flex, WhiteSpace, WingBlank, Grid  } from 'antd-mobile';
 import Icon60 from '../assets/Icon-60@3x.png'
 import qrcode from '../assets/20171000010091.png'
@@ -60,12 +59,12 @@ const icons = [
         <p style={{color: 'white'}}>{el.text}</p>
     </div>
   )
-const FixingQRCode = () => (
+const FixingQRCode = props => (
     <div style={{height: '100%', background: '#399af7'}}>
         <NavBar
             icon={<Icon type="left" size="lg" />}
             leftContent="返回"
-            onLeftClick={_ => history.goBack()}
+            onLeftClick={_ => props.history.goBack()}
             style={{ minHeight: '7vh' }}>二维码</NavBar>
         <WingBlank size="lg">
             <WhiteSpace size="lg" />

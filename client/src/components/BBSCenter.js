@@ -1,5 +1,4 @@
 import React from 'react'
-import history from './history';
 import { NavBar, Icon, Tabs, Card, List, WhiteSpace  } from 'antd-mobile';
 import Icon60 from '../assets/Icon-60@3x.png'
 
@@ -136,10 +135,10 @@ const Plate = (props) => (<List renderHeader={() => '全部板块(9)'}>
         })
     }
 </List>)
-const BBSCenter = () => (
+const BBSCenter = (props) => (
     <div>
         <NavBar
-    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => history.goBack()}/>}
+    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => props.history.goBack()}/>}
     style={{minHeight: '7vh'}}>宝宝论坛</NavBar>
      <Tabs tabs={tabs2}
         initialPage={0}

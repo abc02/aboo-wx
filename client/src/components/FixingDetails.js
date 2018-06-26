@@ -1,5 +1,4 @@
 import React from 'react'
-import history from './history';
 import { ActionSheet, Modal, NavBar, Icon, Flex, List, Button, WhiteSpace, WingBlank } from 'antd-mobile';
 import VipCover from './VipCover'
 import UnBindShowAlert from './UnBindShowAlert'
@@ -42,17 +41,17 @@ const PhonePromptAlert = _ => {
         { text: '取消', onPress: () => console.log('cancel'), style: {color: 'red'}},
     ], 'default', null, ['13800000000'])
 }
-const FixingDetails = () => (
+const FixingDetails = props => (
     <div>
         <NavBar
         icon={<Icon type="left" size="lg"/>}
         leftContent="我的鞋垫"
-        onLeftClick={_ => history.goBack()}
+        onLeftClick={_ => props.history.goBack()}
         style={{minHeight: '7vh'}}>设备10091</NavBar>
-        <VipCover status="使用中" />
+        <VipCover VipCover history={props.history} status="使用中" />
         <List renderHeader={() => '月卡剩余天时间'}>
             <Item 
-                extra={ <Button type="ghost" inline size="small"  onClick={_ => history.push('/FixingsCenter/FixingDetails/VipCenter')}>续费 </Button>}
+                extra={ <Button type="ghost" inline size="small"  onClick={_ => props.history.push('/FixingsCenter/FixingDetails/VipCenter')}>续费 </Button>}
             >
                 322天 
             </Item>
@@ -61,7 +60,7 @@ const FixingDetails = () => (
             <Item
                 extra="20171000010091"
                 arrow="horizontal"
-                onClick={_ => history.push('/FixingsCenter/FixingDetails/FixingQRCode')}
+                onClick={_ => props.history.push('/FixingsCenter/FixingDetails/FixingQRCode')}
             >
                 鞋垫编码 
             </Item>
@@ -91,7 +90,7 @@ const FixingDetails = () => (
             <Item
                 extra="紧急模式"
                 arrow="horizontal"
-                onClick={_ => history.push('/FixingsCenter/FixingDetails/ModeCenter')}
+                onClick={_ => props.history.push('/FixingsCenter/FixingDetails/ModeCenter')}
             >
                 定位跑路 
             </Item>

@@ -7,6 +7,7 @@ import BottomCtrlbar from './BottomCtrlbar'
 import my_fill_light from '../assets/my_fill_light.png'
 import icon_message_white4 from '../assets/icon_message_white4@2x.png'
 class Home extends Component {
+    
     state = {
         leftOpen: false,
         bottomOpen: false

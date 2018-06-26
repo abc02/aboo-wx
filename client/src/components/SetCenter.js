@@ -1,14 +1,13 @@
 import React from 'react'
-import history from './history';
 import { NavBar, Icon, Button, Switch, List, WhiteSpace  } from 'antd-mobile';
 // import Icon60 from '../assets/Icon-60@3x.png'
 
 const Item = List.Item;
 // const Brief = Item.Brief;
-const PersonalCenter = () => (
+const PersonalCenter = props => (
     <div>
         <NavBar
-    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => history.goBack()}/>}
+    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => props.history.goBack()}/>}
     style={{minHeight: '7vh'}}>个人资料</NavBar>
      <List>
     <Item

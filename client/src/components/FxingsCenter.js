@@ -1,5 +1,4 @@
 import React from 'react'
-import history from './history';
 import { NavBar, Icon, List, Button, SwipeAction  } from 'antd-mobile';
 import Icon60 from '../assets/Icon-60@3x.png'
 import UnBindShowAlert from './UnBindShowAlert'
@@ -14,6 +13,7 @@ const data = [
   }
 ]
 const Lists = (props) => {
+  console.log(props)
   const Title = (
     <span style={{color: '#399af7', fontWeight: 'bold'}}>已绑定的鞋垫：</span>
   )
@@ -42,7 +42,7 @@ const Lists = (props) => {
         thumb={Img}
         extra={Tag}
         arrow="horizontal"
-        onClick={e => console.log("onClick", history.push('/FixingsCenter/FixingDetails'))}
+        onClick={_ => props.history.push('/FixingsCenter/FixingDetails')}
       >
          {i.fixingName} <Brief>鞋垫ID：{i.fixingCode}</Brief>
       </Item>
@@ -50,12 +50,12 @@ const Lists = (props) => {
   })}
 </List>)
 };
-const FixingsCenter = () => (
+const FixingsCenter = (props) => (
     <div>
         <NavBar
-    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => history.goBack()}/>}
+    rightContent={<Icon type="cross" size="lg" color="white" onClick={_ => props.history.goBack()}/>}
     style={{minHeight: '7vh'}}>我的鞋垫</NavBar>
-     <Lists />
+     <Lists history={props.history}/>
      <Button type="primary" inline className="bottom-center-absolute">添加新的鞋垫</Button>
     </div>
 );

@@ -1,5 +1,4 @@
 import React from 'react'
-import history from './history';
 import { NavBar, Icon, List, Checkbox, WhiteSpace, WingBlank } from 'antd-mobile';
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -21,12 +20,12 @@ const  data = [
     }
 ]
 
-const ModeCenter = () => (
+const ModeCenter = props => (
     <div>
         <NavBar
             icon={<Icon type="left" size="lg" />}
             leftContent="返回"
-            onLeftClick={_ => history.goBack()}
+            onLeftClick={_ => props.history.goBack()}
             style={{ minHeight: '7vh' }}>定位频率</NavBar>
 
        <List>

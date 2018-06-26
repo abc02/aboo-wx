@@ -1,5 +1,4 @@
 import React from 'react'
-import history from './history';
 import { NavBar, Icon, Flex, List, Button, WingBlank, WhiteSpace  } from 'antd-mobile';
 import VipCover from './VipCover'
 import VipButton from './VipButton'
@@ -15,15 +14,14 @@ const data = [
     '月卡过期后，鞋垫将无法进行定位，历史定位位置继续保留。重新购买/续费后，定位功能立即恢复。',
     '本权益有阿布跑跑提供，用户需遵守服务规则和用户协议，有任何疑问请联系阿布跑跑。'
 ]
-const VipCenter = ({ match }) => {
-        console.log(match)
+const VipCenter =  props => {
     return (<div>
         <NavBar
         icon={<Icon type="left" size="lg"/>}
         leftContent="返回"
-        onLeftClick={_ => history.goBack()}
+        onLeftClick={_ => props.history.goBack()}
         style={{minHeight: '7vh'}}>设备10091月卡续费</NavBar>
-        <VipCover status="月卡剩余322天" />
+        <VipCover history={props.history} status="月卡剩余322天" />
         <List>
             <WhiteSpace size="lg" />
             <WingBlank size="lg">
