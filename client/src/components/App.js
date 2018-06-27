@@ -15,6 +15,8 @@ import PublicBenefit from './PublicBenefit'
 import SetCenter from './SetCenter'
 import SafetyCenter from './SafetyCenter'
 import AddSafety from './AddSafety'
+import TrackCenter from './TrackCenter'
+import TrackMore from './TrackMore'
 class App extends Component {
   render () {
     return (<Router history={history}>
@@ -32,6 +34,8 @@ class App extends Component {
         <Route exact path="/SetCenter" component={SetCenter} />
         <Route exact path="/SafetyCenter" component={SafetyCenter} />
         <Route exact path="/SafetyCenter/AddSafety" component={AddSafety} />
+        <Route exact path="/TrackCenter" component={TrackCenter} />
+        <Route exact path="/TrackCenter/TrackMore" component={TrackMore} />
       </Switch>
     </Router> )
   }

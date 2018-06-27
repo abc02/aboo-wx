@@ -1,7 +1,7 @@
 import React from 'react'
 import { Map } from 'react-amap';
 import ZoomCtrl from './ZoomCtrl'
-import { NavBar, List, Icon, SearchBar, Button } from 'antd-mobile';
+import { List, Icon, SearchBar, Button, Slider, WingBlank } from 'antd-mobile';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -31,12 +31,40 @@ const Top = props => {
     return (<div
         style={style}>
         <div style={{ margin: '6px 20px 6px 50px', position: 'relative' }}>
-            <Icon type='left' size='lg' style={roundButtonStyle} onClick={_ => props.history.goBack()} />
+            <Icon type='left' size="lg" style={roundButtonStyle} onClick={_ => props.history.goBack()} />
             <SearchBar placeholder="Search" maxLength={8} />
         </div>
     </div>)
 }
-
+const BottomBar = props => {
+    const map = props.__map__;
+    if (!map) {
+        console.log('组件必须作为 Map 的子组件使用');
+        return;
+    }
+    const style = {
+        position: 'absolute',
+        bottom: '1vh',
+        left: '0',
+        right: '0',
+        height: '6vh',
+        backgroundColor: 'white',
+        zIndex: '999'
+        //   display: 'flex',
+        //   alignItems: 'center'
+    }
+    return (<WingBlank size="sm" style={style}>
+    <Icon type="left" size="lg" style={{position: 'absolute',  top: '50%', left: '0', transform: 'translateY(-50%)'}}/>
+    <WingBlank size="lg">
+        <Slider
+            style={{ margin: '3vh 50px'}}
+            defaultValue={20}
+            max={2000}
+            />
+    </WingBlank>
+    <Icon type="right" size="lg" style={{position: 'absolute', top: '50%', right: '0', transform: 'translateY(-50%)'}} />
+</WingBlank>)
+}
 
 const data = [
     {
@@ -82,64 +110,53 @@ const data = [
 ]
 const Lists = props => {
     const style = {
-        position: 'absolute',
-        left: '0',
-        right: '0',
-        bottom: '7vh',
-        height: '29vh',
+        height: '44%',
         backgroundColor: 'white',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         zIndex: '999',
-        // overflow: 'auto'
+        overflow: 'auto'
     }
     const ListItems = data.map(i => {
-        const Distance = (<div style={{fontSize: '.8rem', color: '#399af7'}}>{i.distance}米</div>)
+        const Distance = (<div style={{ fontSize: '.8rem', color: '#399af7' }}>{i.distance}米</div>)
         return <Item extra={Distance} key={i.title}>
-        {i.title} <Brief>{i.address}</Brief>
+            {i.title} <Brief>{i.address}</Brief>
         </Item>
     })
-
-    return (<List renderHeader={() => 'Basic Style'}>
+ 
+    return (<List renderHeader='Base' style={style}>
         {ListItems}
     </List>)
 }
 
-const Bottom = props => {
-    const map = props.__map__;
-    if (!map) {
-        console.log('组件必须作为 Map 的子组件使用');
-        return;
-    }
+const BottomButton = props => {
     const style = {
-        position: 'absolute',
-        bottom: '0',
-        height: '7vh',
-        width: '100vw',
+        height: '6%',
         backgroundColor: 'white',
-        // display: 'flex',
-        // flexDirection: 'column',
-        // justifyContent: 'center',
-        zIndex: '999'
-    }
-    const roundButtonStyle = {
-        margin: '0 20px',
-        borderRadius: '12px'
+        zIndex: '999',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        borderTop: '1px solid #ddd'
     }
     return (<div style={style}>
-         <Lists />
-        <div>
-        <Button style={roundButtonStyle} type="primary" size="small">下一步</Button>
-        </div>
+            <Button style={{margin: '0 20px',borderRadius: '12px'}}type="primary" size="small">下一步</Button>
     </div>)
 }
 const AddSafety = props => (
-    <Map amapkey="a1a4b0c0db52f71366ae4732e531748a" style={{ minHeight: '100vh' }}>
-        <Top history={props.history} />
-        <ZoomCtrl />
-        <Bottom />
-    </Map>
+    <div style={{height: '100%'}}>
+        <div style={{height: '50%'}}>
+            <Map amapkey="a1a4b0c0db52f71366ae4732e531748a">
+                <Top history={props.history} />
+                <ZoomCtrl />
+                <BottomBar />
+            </Map>
+        </div>
+        <Lists />
+        <BottomButton />
+    </div>
+   
 );
 
 

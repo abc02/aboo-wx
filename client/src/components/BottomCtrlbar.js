@@ -137,7 +137,7 @@ const BottomCtrlbar = (<div style={{height: '100%'}}>
         // thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
         extra={ <Flex justify="end"><p style={textStyle}>查看详情</p><Icon type="right" /></Flex>}
       />
-      <Card.Body style={{padding: '0'}}>
+      <Card.Body style={{padding: '0'}} onClick={_ => history.push('/TrackCenter')}>
         <img src={trackimage} style={{width: '100%', height: '120px'}} alt="trackimage" />
         <WingBlank size="md">
           <h4>浙江省温州市鹿城区昆仑路72号[鹿城金融广场内]</h4>
