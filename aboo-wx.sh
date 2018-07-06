@@ -1,6 +1,6 @@
 WEB_PATH_SERVER='/home/page/aboo-wx/server'
-WEB_PATH_CLIENT='/home/page/aboo-xx/client'
-WEB_PATH='/home/page/aboo-xx'
+WEB_PATH_CLIENT='/home/page/aboo-wx/client'
+WEB_PATH='/home/page/aboo-wx'
 WEB_USER='root'
 WEB_USERGROUP='root'
 # we can do 
@@ -28,7 +28,7 @@ echo "项目开始部署"
 # 切换到client里面
 cd $WEB_PATH_CLIENT
 # 项目编译
-echo "项目编译中..."
+echo "客户端项目编译中..."
 npm install
 npm run build
 chown -R $WEB_USER:$WEB_USERGROUP $WEB_PATH

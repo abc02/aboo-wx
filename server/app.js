@@ -9,17 +9,18 @@ const crypto = require('crypto')
 
 // config
 const keys = require('./config/keys');
-const buttons = require('./config/buttons')
 
 // wechat
 const wechat = require('co-wechat');
-const wechat_api = require('./wechat_robot').wechat_api;
+// const wechat_api = require('./wechat_robot').wechat_api;
 const wechat_robot = require('./wechat_robot').robot;
 
 // routes
-const index = require('./routes/index')
-const users = require('./routes/users')
-const wechatAccess = require('./routes/wechat')
+// const index = require('./routes/index')
+// const users = require('./routes/users')
+const wechatAccess = require('./routes/wechatAccess')
+const menu = require('./routes/menu')
+const template = require('./routes/template')
 
 // error handler
 onerror(app)
@@ -45,15 +46,11 @@ app.use(views(__dirname + '/views', {
 // })
 
 // routes
-app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
+// app.use(index.routes(), index.allowedMethods())
+// app.use(users.routes(), users.allowedMethods())
 app.use(wechatAccess.routes(), wechatAccess.allowedMethods())
-
-// 创建自定义菜单
-app.use(async (ctx, next) => {
-  let result = await wechat_api.createMenu(buttons)
-  await next()
-})
+app.use(menu.routes(), menu.allowedMethods())
+app.use(template.routes(), template.allowedMethods())
 
 // wechat robot
 app.use(wechat({
